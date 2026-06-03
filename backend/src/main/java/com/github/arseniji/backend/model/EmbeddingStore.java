@@ -103,7 +103,7 @@ public class EmbeddingStore {
         int secretPopularIndex = random.nextInt(store.getPopularCount());
         String secretWord = store.popularWords.get(secretPopularIndex);
 
-        System.out.println("SECRET WORD IS: " + secretWord);
+        //System.out.println("SECRET WORD IS: " + secretWord);
 
         System.out.println("--- Welcome to Contexto Clone ---");
         System.out.println("Guess the secret word!");

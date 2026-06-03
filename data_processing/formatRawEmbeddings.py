@@ -154,10 +154,10 @@ def main():
     }
 
     filtered_by_count = len(lemma_sums) - len(noun_vectors)
-    print(f"\n✅ Итог:")
-    print(f"   Уникальных лемм до фильтра частотности: {len(lemma_sums):,}")
-    print(f"   Отброшено по MIN_COUNT={MIN_COUNT}:        {filtered_by_count:,}")
-    print(f"   Сохранено существительных:               {len(noun_vectors):,}")
+    print(f"\nИтог:")
+    print(f"Уникальных лемм до фильтра частотности: {len(lemma_sums):,}")
+    print(f"Отброшено по MIN_COUNT={MIN_COUNT}: {filtered_by_count:,}")
+    print(f"Сохранено существительных: {len(noun_vectors):,}")
 
     
     with open(debug_log_path, 'w', encoding='utf-8') as log:
@@ -170,12 +170,12 @@ def main():
         log.write(f"\n=== ОТБРОШЕНО ПО ЧАСТОТНОСТИ (MIN_COUNT={MIN_COUNT}) ===\n")
         log.write(f"Количество: {filtered_by_count:,}\n")
 
-    print(f"\n📋 Лог причин отсева: {debug_log_path}")
+    print(f"\nЛог причин отсева: {debug_log_path}")
 
     with open(output_path, 'wb') as out:
         pickle.dump(noun_vectors, out)
 
-    print(f"💾 Сохранено в {output_path}")
+    print(f"Сохранено в {output_path}")
 
 
 if __name__ == '__main__':
